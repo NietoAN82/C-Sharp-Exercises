@@ -106,7 +106,30 @@ namespace SortingExercises
                 System.Diagnostics.Debug.WriteLine(" " + node.data);
             }
         }
-        public HashSet<int> DepthFirstSearchTraversalOnGraph(Node root)
+        public void BreadthFirstTraversalOnTree(Node root)
+        {
+            Queue<Node> nodes = new Queue<Node>();
+            if(root == null)
+            {
+                return;
+            }
+
+            nodes.Enqueue(root);
+            while (nodes.Count > 0)
+            {
+                Node node = nodes.Dequeue();
+                System.Diagnostics.Debug.WriteLine(" " + node.data);
+                if(node.left != null)
+                {
+                    nodes.Enqueue(node.left);
+                }
+                if (node.right != null)
+                {
+                    nodes.Enqueue(node.right);
+                }
+            }
+        }
+/*        public HashSet<int> DepthFirstSearchTraversalOnGraph(Node root)
         {
             HashSet<int> visited = new HashSet<int>();
             if (!graph.AdjacencyList.ContainsKey(root))
@@ -137,7 +160,7 @@ namespace SortingExercises
             }
 
             return visited;
-        }
+        }*/
         public static void Main(string[] args)
         {
 
