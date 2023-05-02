@@ -194,11 +194,37 @@ namespace SortingExercises
 
             return visited;
         }*/
+
+        static int[] selectionSort(int[] arr)
+        {
+            int len = arr.Length;
+            for (int i = 0; i < len; i++)
+            {
+                int minIndex = i;
+                for (int j = 0; j < len; j++)
+                {
+                    if (arr[j] < arr[minIndex])
+                    {
+                        minIndex = j;
+                    }
+                }
+                int temp = arr[i];
+                arr[i] = arr[minIndex];
+                arr[minIndex] = temp;
+            }
+            return arr;
+        }
         public static void Main(string[] args)
         {
 
-            /*int[] example = new int[6] { 1, 3, 5, 6, 8, 11 };
-            System.Diagnostics.Debug.WriteLine(Array.BinarySearch(example,6)); // returns index of value you're looking for*/
+            int[] example = new int[6] { 3, 1, 6, 2, 8, 0 };
+            Array.Sort(example);
+            foreach(int i in example)
+            {
+                System.Diagnostics.Debug.Write(i);
+            }
+            System.Diagnostics.Debug.Write("");
+            //System.Diagnostics.Debug.WriteLine(Array.BinarySearch(example,6)); // returns index of value you're looking for
         }
     }
 }
