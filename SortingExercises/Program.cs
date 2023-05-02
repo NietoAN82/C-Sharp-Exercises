@@ -44,5 +44,10 @@ namespace SortingExercises
             return (elements[middle] != x) ? -1 : middle; //Return -1 or middle depending if x was found
         }
        
+        public static void Main(string[] args)
+        {
+            int[] example = new int[6] { 1, 3, 5, 6, 8, 11 };
+            System.Diagnostics.Debug.WriteLine(Array.BinarySearch(example,6));
+        }
     }
 }
