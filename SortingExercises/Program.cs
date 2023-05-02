@@ -129,6 +129,39 @@ namespace SortingExercises
                 }
             }
         }
+
+        /*public HashSet<int> BreadthFirstTraversalOnGraph(Node root)
+        {
+            HashSet<int> visited = new HashSet<int>();
+
+            if (!graph.AdjacencyList.ContainsKey(root))
+            {
+                return visited;
+            }
+
+            Queue<int> q = new Queue<int>();
+            q.Enqueue(root.data);
+            while(q.Count > 0)
+            {
+                int vertex = q.Dequeue();
+
+                if (visited.Contains(vertex))
+                {
+                    continue;
+                }
+
+                visited.Add(vertex);
+
+                foreach(var neighbor in graph.AdjacencyList[vertex])
+                {
+                    if (!visited.Contains(neighbor))
+                    {
+                        q.Enqueue(neighbor);
+                    }
+                }
+            }
+            return visited;
+        }*/
 /*        public HashSet<int> DepthFirstSearchTraversalOnGraph(Node root)
         {
             HashSet<int> visited = new HashSet<int>();
